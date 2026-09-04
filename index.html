@@ -3,99 +3,207 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>dyit.in — Coming soon</title>
-<meta name="description" content="Something new is on the way at dyit.in.">
+<meta name="theme-color" content="#050b18">
+<meta name="description" content="DYIT — Develop and Yields Information Technology. Building tomorrow, today.">
+<meta name="author" content="DYIT">
+<title>DYIT | Develop and Yields Information Technology</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
 <style>
-  :root {
-    --ink: #14202b;
-    --paper: #f6f4ee;
-    --muted: #5c6b78;
-    --accent: #2f6f6a;
-    --line: rgba(20, 32, 43, 0.12);
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { height: 100%; }
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'Inter', system-ui, sans-serif;
-    display: grid;
-    place-items: center;
-    min-height: 100dvh;
-    padding: 6vw;
-    text-align: center;
-    -webkit-font-smoothing: antialiased;
-  }
-  .wrap { max-width: 640px; }
-  .mark {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    font-size: clamp(2.6rem, 9vw, 5rem);
-    line-height: 1;
-    opacity: 0;
-    animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s forwards;
-  }
-  .mark .dot { color: var(--accent); }
-  .lede {
-    margin-top: 1.4rem;
-    font-size: clamp(1.05rem, 3.5vw, 1.3rem);
-    line-height: 1.6;
-    color: var(--muted);
-    opacity: 0;
-    animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.28s forwards;
-  }
-  .status {
-    margin-top: 2.6rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.95rem;
-    color: var(--ink);
-    padding: 0.55rem 1.1rem;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    opacity: 0;
-    animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.46s forwards;
-  }
-  .pulse {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 0 0 rgba(47, 111, 106, 0.5);
-    animation: pulse 2s infinite;
-  }
-  footer {
-    position: fixed;
-    bottom: 1.6rem; left: 0; right: 0;
-    font-size: 0.82rem;
-    color: var(--muted);
-  }
-  footer a { color: var(--accent); text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
-  @keyframes rise {
-    from { opacity: 0; transform: translateY(14px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes pulse {
-    0%   { box-shadow: 0 0 0 0 rgba(47, 111, 106, 0.5); }
-    70%  { box-shadow: 0 0 0 10px rgba(47, 111, 106, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(47, 111, 106, 0); }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .mark, .lede, .status { animation: none; opacity: 1; }
-    .pulse { animation: none; }
-  }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;
+  font-family:Inter,Arial,sans-serif;
+  color:#fff;
+  background:
+    radial-gradient(circle at 78% 25%,rgba(0,145,255,.13),transparent 34%),
+    radial-gradient(circle at 15% 85%,rgba(0,198,255,.07),transparent 30%),
+    #030816;
+  overflow:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background-image:linear-gradient(rgba(80,140,255,.035) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(80,140,255,.035) 1px,transparent 1px);
+  background-size:65px 65px;
+  mask-image:linear-gradient(to bottom,#000,transparent 90%);
+}
+body:after{
+  content:"";position:fixed;width:520px;height:520px;right:-250px;top:-220px;
+  border-radius:50%;z-index:-1;pointer-events:none;
+  background:radial-gradient(circle,rgba(0,180,255,.11),transparent 68%);
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,calc(100% - 40px));margin:auto}
+
+header{height:82px;padding:22px 0}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:43px;height:43px}
+.logo-name{font-family:Manrope,sans-serif;font-size:21px;font-weight:800;letter-spacing:4px;line-height:1}
+.logo-tagline{display:block;margin-top:6px;color:#71809a;font-size:7px;letter-spacing:1.25px;text-transform:uppercase}
+.status-top{display:flex;align-items:center;gap:9px;color:#7f8da4;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase}
+.dot{width:6px;height:6px;border-radius:50%;background:#00c6ff;box-shadow:0 0 14px #00c6ff;animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35;transform:scale(.75)}}
+
+main{min-height:calc(100vh - 150px);display:flex;align-items:center;text-align:center;padding:20px 20px 50px}
+.hero{width:100%;max-width:850px;margin:auto}
+.badge{
+  display:inline-flex;align-items:center;gap:10px;padding:9px 16px;margin-bottom:28px;
+  border:1px solid rgba(0,198,255,.18);border-radius:100px;
+  background:rgba(0,198,255,.04);color:#69d9ff;font-size:10px;font-weight:700;
+  letter-spacing:2.4px;text-transform:uppercase
+}
+h1{font-family:Manrope,sans-serif;font-size:clamp(52px,8vw,92px);font-weight:800;line-height:.98;letter-spacing:-5px}
+h1 span{background:linear-gradient(90deg,#fff,#64d9ff,#00bfff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.description{max-width:650px;margin:28px auto 0;color:#9aa8bd;font-size:16px;line-height:1.8}
+.description strong{color:#dce9f8;font-weight:600}
+
+.notify-wrap{max-width:520px;margin:36px auto 0}
+.notify-form{
+  display:flex;align-items:center;padding:5px;border:1px solid rgba(118,158,210,.18);
+  border-radius:12px;background:rgba(255,255,255,.035);transition:.3s
+}
+.notify-form:focus-within{border-color:rgba(0,191,255,.55);box-shadow:0 0 35px rgba(0,160,255,.08)}
+.notify-form input{flex:1;min-width:0;height:48px;border:0;outline:0;background:transparent;color:#fff;padding:0 15px;font-size:13px}
+.notify-form input::placeholder{color:#66758d}
+.notify-form button{
+  height:48px;padding:0 23px;border:0;border-radius:8px;color:#fff;background:linear-gradient(100deg,#126bff,#00bfff);
+  font-size:12px;font-weight:700;cursor:pointer;transition:.3s
+}
+.notify-form button:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,157,255,.25)}
+.message{min-height:20px;margin-top:9px;color:#58d7ff;font-size:12px}
+.tagline{margin-top:40px;color:#63728a;font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase}
+.tagline span{color:#33445e;margin:0 9px}
+
+footer{position:fixed;left:0;right:0;bottom:0;padding:20px 0;border-top:1px solid rgba(104,144,196,.08)}
+.footer-inner{display:flex;align-items:center;justify-content:space-between}
+.copy{color:#526178;font-size:11px}
+.social{display:flex;gap:9px}
+.social a{
+  width:35px;height:35px;display:flex;align-items:center;justify-content:center;border-radius:50%;
+  border:1px solid rgba(114,151,198,.14);background:rgba(255,255,255,.025);color:#8190a7;transition:.3s
+}
+.social a:hover{color:#fff;border-color:rgba(0,191,255,.45);background:rgba(0,191,255,.08);transform:translateY(-3px)}
+.social svg{width:16px;height:16px}
+
+@media(max-width:600px){
+  body{overflow:auto}
+  header{height:72px;padding:18px 0}
+  .status-top{display:none}
+  .logo-mark{width:37px;height:37px}
+  .logo-name{font-size:18px}
+  .logo-tagline{font-size:6px}
+  main{min-height:calc(100vh - 155px);padding:45px 20px 90px}
+  h1{font-size:clamp(48px,14vw,68px);letter-spacing:-3px}
+  .description{font-size:14px;line-height:1.75}
+  .notify-form{flex-direction:column;border:0;background:transparent;gap:8px}
+  .notify-form input{width:100%;border:1px solid rgba(118,158,210,.18);border-radius:9px;background:rgba(255,255,255,.035)}
+  .notify-form button{width:100%}
+  .tagline{font-size:8px;letter-spacing:2.5px}
+  footer{position:relative}
+  .footer-inner{flex-direction:column-reverse;gap:14px;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
+
 <body>
-  <main class="wrap">
-    <h1 class="mark">dyit<span class="dot">.in</span></h1>
-    <p class="lede">We're building something here. The site goes live soon — check back in a little while.</p>
-    <span class="status"><span class="pulse"></span> Coming soon</span>
-  </main>
-  <footer>Questions? <a href="mailto:hello@dyit.in">hello@dyit.in</a></footer>
+<header>
+  <div class="container nav">
+    <a href="/" class="logo" aria-label="DYIT Home">
+      <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#00d4ff"/>
+            <stop offset="1" stop-color="#1765ff"/>
+          </linearGradient>
+        </defs>
+        <path d="M18 18h31c24 0 39 13 39 32S73 82 49 82H18V68h30c14 0 22-7 22-18s-8-18-22-18H18z" fill="url(#g)"/>
+        <path d="M35 45h37L61 56H35z" fill="#07142d"/>
+        <rect x="8" y="25" width="9" height="9" rx="2" fill="#00cfff"/>
+        <rect x="13" y="14" width="8" height="8" rx="2" fill="#159aff"/>
+        <rect x="25" y="8" width="9" height="9" rx="2" fill="#00cfff"/>
+      </svg>
+      <div>
+        <div class="logo-name">DYIT</div>
+        <span class="logo-tagline">Develop and Yields Information Technology</span>
+      </div>
+    </a>
+
+    <div class="status-top"><span class="dot"></span>Coming Soon</div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="badge"><span class="dot"></span>Something Great Is Coming</div>
+
+    <h1>We’re <span>Coming Soon.</span></h1>
+
+    <p class="description">
+      <strong>Develop and Yields Information Technology</strong> is building
+      innovative technology solutions designed to help businesses
+      <strong>innovate, grow and transform.</strong>
+      <br>Our digital journey is just beginning.
+    </p>
+
+    <div class="notify-wrap">
+      <form class="notify-form" id="notifyForm">
+        <input type="email" id="email" placeholder="Enter your email address" autocomplete="email" required aria-label="Email address">
+        <button type="submit">Notify Me</button>
+      </form>
+      <div class="message" id="message" role="status" aria-live="polite"></div>
+    </div>
+
+    <div class="tagline">Innovate <span>•</span> Build <span>•</span> Transform</div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="copy">© <span id="year"></span> DYIT. All Rights Reserved.</div>
+
+    <div class="social">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 1 0 5.25 6.94 1.97 1.97 0 0 0 5.25 3ZM20.44 13.2c0-3.47-1.85-5.09-4.32-5.09-1.99 0-2.88 1.1-3.38 1.87V8.5H9.36V20h3.38v-6.4c0-1.69.32-3.32 2.41-3.32 2.06 0 2.09 1.93 2.09 3.43V20h3.2v-6.8Z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.42L6.45 22H3.33l7.24-8.28L2.8 2h6.4l4.42 5.85L18.9 2Zm-1.1 17.7h1.73L8.27 4.2H6.41L17.8 19.7Z"/></svg>
+      </a>
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 8.36 22.9c.58.1.79-.25.79-.56v-2.17c-3.2.7-3.88-1.36-3.88-1.36-.53-1.35-1.3-1.7-1.3-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.04 1.77 2.72 1.26 3.39.96.1-.75.41-1.26.74-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.3 1.19-3.12-.12-.29-.52-1.48.11-3.08 0 0 .97-.31 3.18 1.19a11.05 11.05 0 0 1 5.79 0c2.2-1.5 3.17-1.19 3.17-1.19.64 1.6.24 2.79.12 3.08.74.82 1.19 1.86 1.19 3.12 0 4.43-2.7 5.4-5.27 5.69.42.36.79 1.08.79 2.18v3.23c0 .32.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+document.getElementById("notifyForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const email = document.getElementById("email");
+  const message = document.getElementById("message");
+
+  if (!email.checkValidity()) {
+    email.reportValidity();
+    return;
+  }
+
+  message.textContent = "Thank you! We'll notify you when DYIT goes live.";
+  email.value = "";
+
+  // Connect this form to your backend/email service here.
+});
+</script>
 </body>
 </html>
