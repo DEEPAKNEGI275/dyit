@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dyit.in — Coming soon</title>
+<meta name="description" content="Something new is on the way at dyit.in.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #14202b;
+    --paper: #f6f4ee;
+    --muted: #5c6b78;
+    --accent: #2f6f6a;
+    --line: rgba(20, 32, 43, 0.12);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    display: grid;
+    place-items: center;
+    min-height: 100dvh;
+    padding: 6vw;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 640px; }
+  .mark {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    font-size: clamp(2.6rem, 9vw, 5rem);
+    line-height: 1;
+    opacity: 0;
+    animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s forwards;
+  }
+  .mark .dot { color: var(--accent); }
+  .lede {
+    margin-top: 1.4rem;
+    font-size: clamp(1.05rem, 3.5vw, 1.3rem);
+    line-height: 1.6;
+    color: var(--muted);
+    opacity: 0;
+    animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.28s forwards;
+  }
+  .status {
+    margin-top: 2.6rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    color: var(--ink);
+    padding: 0.55rem 1.1rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    opacity: 0;
+    animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.46s forwards;
+  }
+  .pulse {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 0 rgba(47, 111, 106, 0.5);
+    animation: pulse 2s infinite;
+  }
+  footer {
+    position: fixed;
+    bottom: 1.6rem; left: 0; right: 0;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(47, 111, 106, 0.5); }
+    70%  { box-shadow: 0 0 0 10px rgba(47, 111, 106, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(47, 111, 106, 0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mark, .lede, .status { animation: none; opacity: 1; }
+    .pulse { animation: none; }
+  }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <h1 class="mark">dyit<span class="dot">.in</span></h1>
+    <p class="lede">We're building something here. The site goes live soon — check back in a little while.</p>
+    <span class="status"><span class="pulse"></span> Coming soon</span>
+  </main>
+  <footer>Questions? <a href="mailto:hello@dyit.in">hello@dyit.in</a></footer>
+</body>
+</html>
